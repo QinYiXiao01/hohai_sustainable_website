@@ -1,0 +1,218 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 浏览器默认的font-size是16px */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;
+    position: relative;
+}
+
+.header {
+    /*vh是viewport height 的意思*/
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            #7ed56fca,
+            #28b485b9),
+        url(../img/header3.jpeg);
+    background-size: cover;
+    /*随着窗口大小改变 图片顶部始终贴着窗口顶部*/
+    background-position: top;
+    /*一个白色的切割， 这里的%是相对于该元素而言的*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
+    top: 8rem;
+    left: 8rem;
+}
+
+.logo {
+    height: 6rem;
+
+}
+
+.text-box {
+    /*最好的定位在中心的方法 absolute*/
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*改变box的中心定位点：由左上到中心*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    /*控制动画速度 e.g. ease-in 代表开始慢结束快*/
+    animation-timing-function: ease-out;
+    /*
+    其他一些动画属性
+    animation-delay: 1s;
+    animation-iteration-count: 3;
+    */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    text-align: center;
+
+    animation: moveInRight 1.5s ease-out;
+}
+
+/*动画 @keyframe 动画名称*/
+@keyframes moveInLeft {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateX(1rem);
+
+    }
+
+    80% {
+        transform: translate(-1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+
+    }
+
+    80% {
+        transform: translateY(-1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/*link/visited是一个伪类，是btn一种特殊状态：
+例如悬停在其上时、checkbox被选中时等等
+我们用伪类来设置元素在特殊情况时的样式
+*/
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /*按钮周围的填充 按顺时针方向*/
+    padding: 1.5rem 4rem;
+    /*不指明这个 它只是一个inline-text元素，其padding会占用其他空间*/
+    display: inline-block;
+    border-radius: 10rem;
+    /*过渡属性 是一个简写的属性 必须在初始状态设定*/
+    transition: all 0.2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-0.3rem);
+    /*参数：影子在x方向偏移 影子在y方向偏移 影子发散度 影子的颜色*/
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .3);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: gray;
+}
+
+/*:是伪类 ::是伪元素
+伪类是对于元素的特殊状态进行操作
+伪元素是对于元素内部的特定内容进行操作的*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0.5;
+}
+
+.btn-animated {
+    animation: moveInBottom 1s ease-out 0.5s;
+    /*当动画开始前将0%的样式赋给该对象*/
+    animation-fill-mode: backwards;
+    font-size: 1.7rem;
+}
