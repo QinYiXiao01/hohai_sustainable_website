@@ -1,0 +1,33 @@
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+
+        animation-name: moveInLeft;
+        animation-duration: 1.5s;
+        /*控制动画速度 e.g. ease-in 代表开始慢结束快*/
+        animation-timing-function: ease-out;
+        /*
+        其他一些动画属性
+        animation-delay: 1s;
+        animation-iteration-count: 3;
+        */
+    }
+
+
+    &--sub {
+        display: block;
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 0.5rem;
+        text-align: center;
+
+        animation: moveInRight 1.5s ease-out;
+    }
+}

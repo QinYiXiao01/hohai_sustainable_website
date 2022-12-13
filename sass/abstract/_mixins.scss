@@ -1,0 +1,8 @@
+// 容器内部的元素排列是：float时，外部框就会垮掉，无法盛满
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}

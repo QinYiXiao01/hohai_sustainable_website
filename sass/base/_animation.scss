@@ -1,0 +1,60 @@
+/*动画 @keyframe 动画名称*/
+@keyframes moveInLeft {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateX(1rem);
+
+    }
+
+    80% {
+        transform: translate(-1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+
+    /*初始状态*/
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+
+    }
+
+    80% {
+        transform: translateY(-1rem);
+    }
+
+    /*最终状态*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

@@ -1,80 +1,4 @@
 @charset "UTF-8";
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-html {
-  /* 浏览器默认的font-size是16px */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  position: relative; }
-
-.header {
-  /*vh是viewport height 的意思*/
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, #7ed56fca, #28b485), url(../img/header3.jpeg);
-  background-size: cover;
-  /*随着窗口大小改变 图片顶部始终贴着窗口顶部*/
-  background-position: top;
-  /*一个白色的切割， 这里的%是相对于该元素而言的*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
-  top: 8rem;
-  left: 8rem; }
-
-.header__logo {
-  height: 6rem; }
-
-.header__text-box {
-  /*最好的定位在中心的方法 absolute*/
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /*改变box的中心定位点：由左上到中心*/
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 700;
-  letter-spacing: 1.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1.5s;
-  /*控制动画速度 e.g. ease-in 代表开始慢结束快*/
-  animation-timing-function: ease-out;
-  /*
-    其他一些动画属性
-    animation-delay: 1s;
-    animation-iteration-count: 3;
-    */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: 0.5rem;
-  text-align: center;
-  animation: moveInRight 1.5s ease-out; }
-
 /*动画 @keyframe 动画名称*/
 @keyframes moveInLeft {
   /*初始状态*/
@@ -112,12 +36,57 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  /* 浏览器默认的font-size是16px */
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  position: relative; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    /*控制动画速度 e.g. ease-in 代表开始慢结束快*/
+    animation-timing-function: ease-out;
+    /*
+        其他一些动画属性
+        animation-delay: 1s;
+        animation-iteration-count: 3;
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    animation: moveInRight 1.5s ease-out; }
+
 /*link/visited是一个伪类，是btn一种特殊状态：
 例如悬停在其上时、checkbox被选中时等等
 我们用伪类来设置元素在特殊情况时的样式
 */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   /*按钮周围的填充 按顺时针方向*/
@@ -133,6 +102,9 @@ body {
   transform: translateY(-0.3rem);
   /*参数：影子在x方向偏移 影子在y方向偏移 影子发散度 影子的颜色*/
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
+  .btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0.5; }
 
 .btn:active {
   transform: translateY(-1px);
@@ -140,11 +112,10 @@ body {
 
 .btn--white {
   background-color: #fff;
-  color: gray; }
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
-/*:是伪类 ::是伪元素
-伪类是对于元素的特殊状态进行操作
-伪元素是对于元素内部的特定内容进行操作的*/
 .btn::after {
   content: "";
   display: inline-block;
@@ -157,15 +128,65 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scale(1.5);
-  opacity: 0.5; }
-
 .btn--animated {
   animation: moveInBottom 1s ease-out 0.5s;
   /*当动画开始前将0%的样式赋给该对象*/
   animation-fill-mode: backwards;
   font-size: 1.7rem; }
+
+.header {
+  /*vh是viewport height 的意思*/
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56fca, #28b485), url(../img/header3.jpeg);
+  background-size: cover;
+  /*随着窗口大小改变 图片顶部始终贴着窗口顶部*/
+  background-position: top;
+  /*一个白色的切割， 这里的%是相对于该元素而言的*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
+    top: 8rem;
+    left: 8rem; }
+  .header__logo {
+    height: 6rem; }
+  .header__text-box {
+    /*最好的定位在中心的方法 absolute*/
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*改变box的中心定位点：由左上到中心*/
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+    background-color: orangered;
+    float: left; }
+    .row .col-1-of-2:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }

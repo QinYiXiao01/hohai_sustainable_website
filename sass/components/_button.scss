@@ -1,0 +1,67 @@
+/*link/visited是一个伪类，是btn一种特殊状态：
+例如悬停在其上时、checkbox被选中时等等
+我们用伪类来设置元素在特殊情况时的样式
+*/
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        /*按钮周围的填充 按顺时针方向*/
+        padding: 1.5rem 4rem;
+        /*不指明这个 它只是一个inline-text元素，其padding会占用其他空间*/
+        display: inline-block;
+        border-radius: 10rem;
+        /*过渡属性 是一个简写的属性 必须在初始状态设定*/
+        transition: all 0.2s;
+        position: relative;
+
+
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        /*参数：影子在x方向偏移 影子在y方向偏移 影子发散度 影子的颜色*/
+        box-shadow: 0 1rem 2rem rgba($color-black, .3);
+
+        &::after {
+            transform: scale(1.5);
+            opacity: 0.5;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, .3);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--animated {
+        animation: moveInBottom 1s ease-out 0.5s;
+        /*当动画开始前将0%的样式赋给该对象*/
+        animation-fill-mode: backwards;
+        font-size: 1.7rem;
+    }
+}
