@@ -1,7 +1,3 @@
-/*link/visited是一个伪类，是btn一种特殊状态：
-例如悬停在其上时、checkbox被选中时等等
-我们用伪类来设置元素在特殊情况时的样式
-*/
 .btn {
 
     &:link,
@@ -16,6 +12,7 @@
         /*过渡属性 是一个简写的属性 必须在初始状态设定*/
         transition: all 0.2s;
         position: relative;
+        font-size: $default-font-size;
 
 
     }
@@ -63,5 +60,32 @@
         /*当动画开始前将0%的样式赋给该对象*/
         animation-fill-mode: backwards;
         font-size: 1.7rem;
+    }
+}
+
+.btn-text {
+
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba(black, 0.2);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 1rem 2rem rgba(black, 0.2);
+        transform: translateY(0);
+
     }
 }

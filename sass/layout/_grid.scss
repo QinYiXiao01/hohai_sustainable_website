@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width;
-    background-color: #eee;
     // 一个块元素常用的居中技巧
     margin: 0 auto;
 
@@ -13,7 +12,6 @@
 
     // CSS的属性选择器
     [class^="col-"] {
-        background-color: orangered;
         float: left;
 
         &:not(:last-child) {
@@ -23,7 +21,6 @@
 
     .col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
-        background-color: orangered;
         float: left;
 
         &:not(:last-child) {

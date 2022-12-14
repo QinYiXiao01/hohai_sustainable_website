@@ -27,7 +27,7 @@
     &__text-box {
         /*最好的定位在中心的方法 absolute*/
         position: absolute;
-        top: 40%;
+        top: 25%;
         left: 50%;
         /*改变box的中心定位点：由左上到中心*/
         transform: translate(-50%, -50%);
