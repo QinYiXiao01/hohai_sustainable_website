@@ -4,7 +4,7 @@
     background-image: linear-gradient(to right bottom,
             $color-primary-light,
             $color-primary-dark),
-        url(../img/header3.jpeg);
+        url(../img/1.jpg);
     background-size: cover;
     /*随着窗口大小改变 图片顶部始终贴着窗口顶部*/
     background-position: top;
@@ -20,14 +20,18 @@
     }
 
     &__logo {
+        transition: all 0.2s;
         height: 6rem;
 
+        &:hover {
+            transform: translateY(-1rem) scale(1.1);
+        }
     }
 
     &__text-box {
         /*最好的定位在中心的方法 absolute*/
         position: absolute;
-        top: 25%;
+        top: 10%;
         left: 50%;
         /*改变box的中心定位点：由左上到中心*/
         transform: translate(-50%, -50%);

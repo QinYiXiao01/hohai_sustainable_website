@@ -3,3 +3,26 @@
     padding: 25rem 0;
     margin-top: -20vh;
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom,
+            $color-primary-light,
+            $color-primary-dark),
+        url(../img/5.jpg);
+    background-size: cover;
+
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    // 选择直接的儿子
+    &>* {
+        transform: skewY(7deg);
+    }
+}
+
+.section-design {
+    background-color: $color-grey-light-1;
+    padding: 30rem 0 50rem 0;
+    margin-top: -10rem;
+}

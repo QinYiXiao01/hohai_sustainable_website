@@ -13,8 +13,6 @@
         transition: all 0.2s;
         position: relative;
         font-size: $default-font-size;
-
-
     }
 
     &:hover {
@@ -60,6 +58,10 @@
         /*当动画开始前将0%的样式赋给该对象*/
         animation-fill-mode: backwards;
         font-size: 1.7rem;
+    }
+
+    &--card {
+        margin-top: 4rem;
     }
 }
 

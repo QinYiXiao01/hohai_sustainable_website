@@ -1,10 +1,18 @@
 // 颜色
 $color-primary: #55c57a;
-$color-primary-light: #7ed56fca;
-$color-primary-dark: #28b485;
+$color-primary-light: #7ed56f76;
+$color-primary-dark: #28b48585;
+
+$color-secondary-light: #ffbb00a8;
+$color-secondary-dark: #ff78309a;
+
+$color-tertiary-light: #46a4fc8e;
+$color-tertiary-dark: #3f59d98a;
 
 $color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
 $color-grey-dark: #777;
+
 $color-white: #fff;
 $color-black: #000;
 
@@ -12,6 +20,6 @@ $color-black: #000;
 $default-font-size: 1.6rem;
 
 // 网格
-$grid-width: 114rem;
+$grid-width: 118rem;
 $gutter-vertical: 8rem;
-$gutter-horizontal: 6rem;
+$gutter-horizontal: 16rem;
