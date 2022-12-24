@@ -94,7 +94,7 @@ body {
   transition: all .2s; }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(5deg) scale(1.1);
-    text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1); }
+    text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 1.8rem;
@@ -118,7 +118,62 @@ body {
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
 
-.btn:link, .btn:visited {
+.achievement {
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 2rem;
+  padding: 7rem;
+  font-size: 1.6rem;
+  opacity: 0.8;
+  transform: skewX(-10deg); }
+  .achievement__shape {
+    float: left;
+    width: 30rem;
+    height: 20rem;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    transform: skewX(10deg) translateX(-3rem) translateY(-4rem);
+    position: relative;
+    border-radius: 1.5rem; }
+    .achievement__shape__img {
+      transition: all 0.5s;
+      border-radius: 1.5rem;
+      width: 100%; }
+  .achievement__text {
+    transform: skewX(10deg); }
+  .achievement__caption {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 10rem;
+    transform: -50%, -50%;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s; }
+  .achievement:hover .achievement__caption {
+    opacity: 1;
+    transform: translateY(-1.5rem); }
+  .achievement:hover .achievement__shape__img {
+    transform: scale(1.05);
+    filter: blur(3px) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .2; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   /*按钮周围的填充 按顺时针方向*/
@@ -129,7 +184,9 @@ body {
   /*过渡属性 是一个简写的属性 必须在初始状态设定*/
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -148,6 +205,10 @@ body {
   color: #777; }
   .btn--white::after {
     background-color: #fff; }
+
+.btn--green {
+  background-color: #55c57a;
+  color: white; }
 
 .btn::after {
   content: "";
@@ -202,7 +263,7 @@ body {
     left: 0;
     width: 100%;
     backface-visibility: hidden;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
     .card__side--front {
       background-color: white; }
     .card__side--back {
@@ -326,6 +387,82 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.05); }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.6rem;
+  padding: 1.5rem 2rem;
+  color: inherit;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all .3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #139925; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid orangered; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 30%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
 .header {
   /*vh是viewport height 的意思*/
   height: 95vh;
@@ -406,5 +543,22 @@ body {
 
 .section-design {
   background-color: #f7f7f7;
-  padding: 30rem 0 50rem 0;
+  padding: 30rem 0 20rem 0;
   margin-top: -10rem; }
+
+.section-achievement {
+  padding: 5rem 0;
+  position: relative; }
+
+.contact-box {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f76, #28b48585); }
+
+.contact {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(56, 228, 168, 0.2) 50%), url(../img/小屋.png);
+  border-radius: 2rem;
+  background-size: cover;
+  height: 55rem; }
+  .contact__form {
+    width: 50%;
+    padding: 7rem; }

@@ -1,0 +1,54 @@
+.achievement {
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba(black, .2);
+    background-color: white;
+    border-radius: 2rem;
+    padding: 7rem;
+    font-size: $default-font-size;
+    opacity: 0.8;
+    transform: skewX(-10deg);
+
+    &__shape {
+        float: left;
+        width: 30rem;
+        height: 20rem;
+        box-shadow: 0 2rem 4rem rgba(black, .3);
+        transform: skewX(10deg) translateX(-3rem) translateY(-4rem);
+        position: relative;
+        border-radius: 1.5rem;
+
+        &__img {
+            transition: all 0.5s;
+            border-radius: 1.5rem;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        transform: skewX(10deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 10rem;
+        transform: (-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translateY(-1.5rem);
+    }
+
+    &:hover &__shape__img {
+        transform: scale(1.05);
+        filter: blur(3px) brightness(80%);
+    }
+}

@@ -1,5 +1,7 @@
 .btn {
 
+    &,
+    // button元素没有link/visted等伪元素，要这样选中它
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -13,6 +15,9 @@
         transition: all 0.2s;
         position: relative;
         font-size: $default-font-size;
+
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -38,6 +43,11 @@
         &::after {
             background-color: $color-white;
         }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: white;
     }
 
     &::after {

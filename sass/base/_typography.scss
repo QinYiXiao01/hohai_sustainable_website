@@ -43,9 +43,10 @@
     letter-spacing: 5px;
     transition: all .2s;
 
+
     &:hover {
         transform: skewY(2deg) skewX(5deg) scale(1.1);
-        text-shadow: .5rem .5rem .5rem rgba(black, .1);
+        text-shadow: .5rem .5rem .5rem rgba(black, .2);
     }
 }
 
