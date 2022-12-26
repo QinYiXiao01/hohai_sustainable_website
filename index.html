@@ -14,11 +14,27 @@
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <div class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item" id="nav-1"><a href="#" class="navigation__link">01 关于河海可持续</a></li>
+                <li class="navigation__item" id="nav-2"><a href="#" class="navigation__link">02 我们的分析</a></li>
+                <li class="navigation__item" id="nav-3"><a href="#" class="navigation__link">03 我们的专项设计</a></li>
+                <li class="navigation__item" id="nav-4"><a href="#" class="navigation__link">04 我们取得的成绩</a></li>
+                <li class="navigation__item" id="nav-5"><a href="#" class="navigation__link">05 订阅我们</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="navbar">
         <div class="navbar__logo-box">
             <figure>
                 <img src="img/logo.png" alt="logo" class="navbar__logo">
-                <figcaption style="color: azure;">Hohai Sustainable Team</figcaption>
+                <figcaption style="color: azure; margin-top: -1rem;">Hohai Sustainable Team</figcaption>
             </figure>
         </div>
         <ul class="navbar__list">
@@ -45,7 +61,7 @@
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
-                    更有新意的城市绿地解决方案
+                    更有新意的可持续解决方案
                 </h2>
             </div>
 
@@ -367,8 +383,8 @@
             <div class="col-1-of-2">
                 <div class="footer__copyright">
                     <p class="footer__link">
-                        版权所有&copy;：河海大学土木与交通学院 开发者：Yixiao Qin
-                        <br>电话：123456 邮编：210098
+                        版权所有&copy;：河海大学土木与交通学院 | 开发者：Yixiao Qin
+                        <br>电话：123456 | 邮编：210098
                     </p>
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#" class="footer__link">github</a></li>
@@ -380,6 +396,11 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup">
+        <div class="popup__contest">
+        </div>
+    </div>
 
     <!-- <section class="grid-test">
         <div class="row">
