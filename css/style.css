@@ -53,7 +53,7 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
+  padding: 0 3rem 3rem 3rem;
   position: relative; }
 
 .heading-primary {
@@ -463,6 +463,63 @@ body {
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 12rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s;
+  z-index: 50;
+  background-color: rgba(16, 121, 121, 0.2);
+  font-weight: 400; }
+  .navbar__logo-box {
+    position: absolute;
+    /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
+    display: inline-block;
+    top: 1rem;
+    left: 15rem;
+    transition: all 0.5s; }
+  .navbar__logo {
+    transition: all 0.2s;
+    height: 8rem; }
+    .navbar__logo:hover {
+      transform: translateY(-1rem) scale(1.1); }
+  .navbar__list {
+    position: absolute;
+    top: 5rem;
+    left: 25rem;
+    justify-content: center;
+    align-content: center;
+    list-style: none;
+    transition: 0.5s; }
+    .navbar__list li {
+      display: inline-block; }
+      .navbar__list li:first-child {
+        margin-left: 9rem; }
+      .navbar__list li:not(:last-child) {
+        margin-right: 2rem; }
+    .navbar__list a {
+      margin: 0 10px;
+      font-size: 18px;
+      font-weight: 300;
+      color: #f7f7f7;
+      text-decoration: none; }
+
+.change-bar {
+  padding: 3rem 10rem;
+  background-color: #2d926d;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
+
+.change-text {
+  color: #fcf7f7;
+  transform: translateY(-3.5rem); }
+
+.change-logo {
+  transform: translateY(-3rem) scale(0.6); }
+
 .header {
   /*vh是viewport height 的意思*/
   height: 95vh;
@@ -472,20 +529,10 @@ body {
   background-position: top;
   /*一个白色的切割， 这里的%是相对于该元素而言的*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
-    top: 8rem;
-    left: 8rem; }
-  .header__logo {
-    transition: all 0.2s;
-    height: 6rem; }
-    .header__logo:hover {
-      transform: translateY(-1rem) scale(1.1); }
   .header__text-box {
     /*最好的定位在中心的方法 absolute*/
     position: absolute;
-    top: 10%;
+    top: 40rem;
     left: 50%;
     /*改变box的中心定位点：由左上到中心*/
     transform: translate(-50%, -50%);
@@ -526,6 +573,41 @@ body {
 
 .col-3-of-4 {
   width: calc(3 * ((100% - 3 * 16rem) / 4) + 2 * 16rem); }
+
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 22rem;
+    height: 15rem; }
+    .footer__logo__caption {
+      font-size: 1.6rem;
+      color: #f7f7f7; }
+  .footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    text-decoration: none;
+    display: inline-block; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
 
 .section-about {
   background-color: #f7f7f7;

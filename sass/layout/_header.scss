@@ -11,27 +11,10 @@
     /*一个白色的切割， 这里的%是相对于该元素而言的*/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-    // &相当于copy了header
-    &__logo-box {
-        position: absolute;
-        /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
-        top: 8rem;
-        left: 8rem;
-    }
-
-    &__logo {
-        transition: all 0.2s;
-        height: 6rem;
-
-        &:hover {
-            transform: translateY(-1rem) scale(1.1);
-        }
-    }
-
     &__text-box {
         /*最好的定位在中心的方法 absolute*/
         position: absolute;
-        top: 10%;
+        top: 40rem;
         left: 50%;
         /*改变box的中心定位点：由左上到中心*/
         transform: translate(-50%, -50%);

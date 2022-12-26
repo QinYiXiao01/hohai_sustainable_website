@@ -14,11 +14,23 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__logo-box">
-            <img src="img/logo.png" alt="logo" class="header__logo">
+    <div class="navbar">
+        <div class="navbar__logo-box">
+            <figure>
+                <img src="img/logo.png" alt="logo" class="navbar__logo">
+                <figcaption style="color: azure;">Hohai Sustainable Team</figcaption>
+            </figure>
         </div>
+        <ul class="navbar__list">
+            <li><a href="#">主页</a></li>
+            <li><a href="#">历年方案</a></li>
+            <li><a href="#">成绩</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">友链</a></li>
+        </ul>
+    </div>
 
+    <header class="header">
         <div class="header__text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary--main">SUSTAINABILITY</span>
@@ -290,7 +302,7 @@
                             <form action="#" class="form">
                                 <div class="u-margin-bottom-medium">
                                     <h2 class="heading-secondary">
-                                        感兴趣?请留下您的信息
+                                        感兴趣?订阅我们的邮件
                                     </h2>
                                 </div>
                                 <div class="form__group">
@@ -329,8 +341,45 @@
                     </div>
                 </div>
             </div>
-        </scetion>
+            </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <figure>
+                <img src="img/logo.png" alt="logo" class="footer__logo">
+                <figcaption class="footer__logo__caption">河海大学可持续团队<br>Sustainable Solutions Team of Hohai University
+                </figcaption>
+            </figure>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">河海大学</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">河海大学土木院</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">ASCE</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Sustainable Solutions</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Innovation Contest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <div class="footer__copyright">
+                    <p class="footer__link">
+                        版权所有&copy;：河海大学土木与交通学院 开发者：Yixiao Qin
+                        <br>电话：123456 邮编：210098
+                    </p>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">github</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">facebook</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">weibo</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- <section class="grid-test">
         <div class="row">
@@ -398,7 +447,7 @@
             </div>
         </div>
     </section> -->
-    <script src="scripts/videoControl.js"></script>
+    <script src="scripts/control.js"></script>
 </body>
 
 </html>

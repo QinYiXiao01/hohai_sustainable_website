@@ -1,0 +1,79 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 12rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+    z-index: 50;
+    background-color: rgba(rgb(16, 121, 121), 0.2);
+    font-weight: 400;
+
+    // &相当于copy了header
+    &__logo-box {
+        position: absolute;
+        /*此处的参考是自己的父元素，因此父元素的position要设为relative*/
+        display: inline-block;
+        top: 1rem;
+        left: 15rem;
+        transition: all 0.5s;
+    }
+
+    &__logo {
+        transition: all 0.2s;
+        height: 8rem;
+
+        &:hover {
+            transform: translateY(-1rem) scale(1.1);
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: 5rem;
+        left: 25rem;
+        justify-content: center;
+        align-content: center;
+        list-style: none;
+        transition: 0.5s;
+
+        li {
+            display: inline-block;
+
+            &:first-child {
+                margin-left: 9rem;
+            }
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+        }
+
+        a {
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 300;
+            color: $color-grey-light-1;
+            text-decoration: none;
+        }
+    }
+
+}
+
+.change-bar {
+    padding: 3rem 10rem;
+    background-color: rgba(#2d926d, 1);
+    box-shadow: 0 1rem 2rem rgba(black, 0.3);
+    //background-color: rgba(rgb(16, 121, 105), 0.8);
+}
+
+.change-text {
+    color: rgb(252, 247, 247);
+    transform: translateY(-3.5rem);
+}
+
+.change-logo {
+    transform: translateY(-3rem) scale(0.6);
+}
