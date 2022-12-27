@@ -129,6 +129,7 @@
             transition: all 0.2s;
             border-radius: 50%;
             margin: 0 auto;
+            display: block;
 
             &:hover {
                 transform: translateY(-0.5rem);

@@ -13,6 +13,11 @@
         animation-duration: 1.5s;
         /*控制动画速度 e.g. ease-in 代表开始慢结束快*/
         animation-timing-function: ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+
         /*
         其他一些动画属性
         animation-delay: 1s;
@@ -43,6 +48,13 @@
     letter-spacing: 5px;
     transition: all .2s;
 
+    @include respond(tab-port) {
+        font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(5deg) scale(1.1);

@@ -6,3 +6,46 @@
         clear: both;
     }
 }
+
+// mixins to manage media query
+/*
+0 - 600px 手机
+600 - 900px 平板
+900 - 1200px 平板横屏
+1200 - 1800px 现有风格适用屏幕
+1800 -  大屏
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==phone {
+        @media (max-width: 37.5em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint ==tab-port {
+        @media (max-width: 56.25em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint ==tab-land {
+        @media (max-width: 75em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint ==big-desktop {
+        @media (min-width: 112.5em) {
+            @content
+        }
+
+        ;
+    }
+}

@@ -8,6 +8,12 @@
     position: relative;
     transition: all 0.2s;
 
+    @include respond(tab-port) {
+        max-width: 50rem;
+        //margin: 2rem 0 2rem !important;
+        margin: 0 auto !important;
+    }
+
     &__img {
         position: absolute;
         width: 32rem;
@@ -18,6 +24,12 @@
 
         &:hover {
             transform: translateY(-1.5rem) scale(1.2);
+        }
+
+        @include respond(tab-port) {
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
         }
     }
 

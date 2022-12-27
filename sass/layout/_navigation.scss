@@ -11,11 +11,15 @@
         border-radius: 50%;
         position: fixed;
         top: 3rem;
-        right: 10rem;
+        right: 12rem;
         z-index: 60;
         box-shadow: 0 1rem 3rem rgba(black, .1);
         text-align: center;
         cursor: pointer;
+
+        // @include respond(phone) {
+        //     right: 2rem !important;
+        // }
     }
 
     &__background {
@@ -24,11 +28,15 @@
         border-radius: 50%;
         position: fixed;
         top: 3.5rem;
-        right: 10.5rem;
-        //background-image: radial-gradient(rgb(97, 199, 158), rgb(20, 148, 86));
+        right: 12.5rem;
         background-image: radial-gradient(rgba(rgb(126, 209, 176), 0.9), rgba(rgb(20, 148, 86), 0.9));
         z-index: 30;
         transition: transform .6s;
+
+        @include respond(phone) {
+            height: 4rem;
+            width: 4rem;
+        }
 
         //transform: scale(80);
     }
@@ -48,7 +56,8 @@
 
     &__list {
         position: absolute;
-        top: 50%;
+        display: block;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         list-style: none;

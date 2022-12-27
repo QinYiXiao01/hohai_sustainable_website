@@ -9,6 +9,28 @@
 html {
     /* 浏览器默认的font-size是16px */
     font-size: 62.5%;
+
+    // @media (max-width: 600px) {
+    //     font-size: 50%;
+    // }
+
+    // 与上面相同
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px 
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem = 8px; 8/16 = 50%
+    }
+
+    @include respond(phone) {
+        font-size: 37.5%; // 1rem = 6px; 6/16 = 37.5%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px 
+    }
 }
 
 body {
@@ -19,4 +41,8 @@ body {
     color: $color-grey-dark;
     padding: 0 3rem 3rem 3rem;
     position: relative;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
