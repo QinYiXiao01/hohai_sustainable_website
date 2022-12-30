@@ -18,12 +18,13 @@
         position: absolute;
         width: 32rem;
         height: 25rem;
-        top: 0;
-        left: -3rem;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         transition: all 0.2s;
 
         &:hover {
-            transform: translateY(-1.5rem) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
         }
 
         @include respond(tab-port) {
