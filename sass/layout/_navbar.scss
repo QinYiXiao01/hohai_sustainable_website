@@ -46,7 +46,7 @@
         justify-content: center;
         align-content: center;
         list-style: none;
-        transition: 0.5s;
+        transition: all 0.5s;
 
         @include respond(phone) {
             display: none;
@@ -70,6 +70,11 @@
             font-weight: 300;
             color: $color-grey-light-1;
             text-decoration: none;
+            transition: all 0.3s;
+
+            &:hover {
+                color: rgb(16, 121, 121);
+            }
         }
     }
 
